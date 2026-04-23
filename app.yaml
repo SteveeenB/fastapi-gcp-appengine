@@ -1,6 +1,11 @@
 runtime: python313
 entrypoint: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
 service: otro-servicio
+beta_settings:
+  cloud_sql_instances: 'savvy-temple-493922-p0:northamerica-northeast2:fastapi-db'
 
 env_variables:
   HOLA_MUNDO: 'hola_mundo'
+  DB_NAME: 'students_bd'
+  DB_USER: 'postgres'
+  DB_CONNECTION_NAME: 'savvy-temple-493922-p0:northamerica-northeast2:fastapi-db'
